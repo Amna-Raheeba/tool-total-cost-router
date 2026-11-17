@@ -1,0 +1,2 @@
+# Core is stdlib-only. Only the dashboard needs anything extra.
+streamlit>=1.44  # st.dataframe(width="stretch") needs >= 1.44

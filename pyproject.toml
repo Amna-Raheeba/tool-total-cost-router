@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "tool-total-cost-router"
+version = "0.2.0"
+description = "Route (model, tool, output-cap) jointly by total $/resolved-task: model tokens plus tool-output tokens re-injected into context plus retry cost."
+readme = "README.md"
+license = { text = "MIT" }
+authors = [{ name = "Amna Raheeba" }]
+requires-python = ">=3.10"
+dependencies = []
+
+[project.optional-dependencies]
+dashboard = ["streamlit>=1.44"]  # st.dataframe(width="stretch") needs >= 1.44
+
+[project.scripts]
+total-cost-router = "tool_total_cost_router.__main__:main"
+
+[tool.setuptools.packages.find]
+include = ["tool_total_cost_router*"]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]
